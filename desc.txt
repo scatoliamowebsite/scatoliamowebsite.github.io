@@ -1,0 +1,32 @@
+
+tutti i prodotti: 
+  - Scatole personalizzate
+  - Scatole per imballaggio
+  - Materiale di imballaggio
+
+
+  Se clicca su scatole personalizzate lo porta a quella altezza li
+    Deve cliccare sul tipo di scatola che vuole nella slideshow
+      Deve scegliere colore e grandezze: larghezza lunghezza altezza e quantità, minimo 30 
+
+  Scatole per imballaggio: 3 colori, quando clicca sceglie quantita e dimensioni
+
+  
+  Materiale: Film estensbile, nastro pluriball.
+
+  Scotch: colore e quantità direttamente chat
+  Film estensibile: trasparente, bianco, nero, bobinette + quantità
+  Plurball: 80-125 - 110gm | 90-125 - 90gm | 100-100 55gm
+
+  selezione colori: quadratini
+
+  mettere email
+
+  scatoliamoitalia@gmail.com
+
+  colere motivo sito: non blu ma cartone (simile al logo)
+
+  https://wa.me/393519709191?text=Ciao%21%20Spero%20tu%20stia%20bene.%20Volevo%20ricordarti%20dell%27incontro%20di%20domani%20alle%2010%3A00.%20Non%20dimenticare%21
+  393447973229
+
+  todo: sistemare precisioen top button
