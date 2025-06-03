@@ -164,82 +164,87 @@
 
 
 
-  <meta charset="UTF-8">
-  <title>Richiesta Scatola</title>
+  
+<meta charset="UTF-8">
+<title>Richiedi Pluriball</title>
 
+<h2 style="margin-bottom: 32px; color: #222; font-size: 24px;">Richiedi Pluriball</h2>
 
-
-
-  <meta charset="UTF-8">
-  <title>Richiedi Pluriball</title>
-
-
-  <h2 style="margin-bottom: 32px; color: #222; font-size: 24px;">Richiedi Pluriball</h2>
-
-  <div style="
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      justify-content: center;
-      margin-bottom: 36px;
-    ">
-    <div style="display: flex; flex-direction: column; align-items: center;">
-      <img src="pluriball_files/grammatura_90gr.webp" alt="Pluriball 90gr" style="
-          width: 180px;
-          height: auto;
-          border-radius: 10px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-          margin-bottom: 12px;
-        ">
-      <span style="font-size: 15px; color: #555;">90–125m • 90gr</span>
-    </div>
-
-    <div style="display: flex; flex-direction: column; align-items: center;">
-      <img src="pluriball_files/grammatura_55gr.webp" alt="Pluriball 55gr" style="
-          width: 180px;
-          height: auto;
-          border-radius: 10px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-          margin-bottom: 12px;
-        ">
-      <span style="font-size: 15px; color: #555;">100×100cm • 55gr</span>
-    </div>
+<div style="
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 36px;
+  ">
+  <div style="display: flex; flex-direction: column; align-items: center;">
+    <img src="1.png" alt="Pluriball 55gr" style="
+        width: 180px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        margin-bottom: 12px;
+      ">
+    <span style="font-size: 15px; color: #555;">55gr</span>
   </div>
 
-  <select id="pluriballOpzione" style="
-      width: 260px;
-      padding: 12px 14px;
-      font-size: 16px;
-      border: 2px solid #ddd;
-      border-radius: 8px;
-      margin-bottom: 30px;
-      box-shadow: inset 0 1px 3px rgba(0,0,0,0.08);
-    ">
-    <option value="">Seleziona un tipo di pluriball</option>
-    <option value="Pluriball 90-125m, grammatura 90gr">90–125m • Grammatura 90gr</option>
-    <option value="Pluriball 100x100cm, grammatura 55gr" selected="selected">100×100cm • Grammatura 55gr</option>
-  </select>
+  <div style="display: flex; flex-direction: column; align-items: center;">
+    <img src="2.png" alt="Pluriball 90gr" style="
+        width: 180px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        margin-bottom: 12px;
+      ">
+    <span style="font-size: 15px; color: #555;">90gr</span>
+  </div>
 
-  <button onclick="inviaRichiesta()" style="padding: 14px 36px; font-size: 18px; font-weight: 600; background-color: rgb(37, 211, 102); color: white; border: medium; border-radius: 10px; box-shadow: rgba(37, 211, 102, 0.4) 0px 6px 12px; cursor: pointer; transition: background-color 0.3s, transform 0.2s; transform: scale(1);" onmouseover="this.style.backgroundColor='#1DA851'; this.style.transform='scale(1.02)'" onmouseout="this.style.backgroundColor='#25D366'; this.style.transform='scale(1)'">
-    Invia richiesta
-  </button>
+  <div style="display: flex; flex-direction: column; align-items: center;">
+    <img src="3.png" alt="Pluriball 110gr" style="
+        width: 180px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        margin-bottom: 12px;
+      ">
+    <span style="font-size: 15px; color: #555;">110gr</span>
+  </div>
+</div>
 
-  <script>
-    function inviaRichiesta() {
-      const selezione = document.getElementById("pluriballOpzione").value;
+<select id="pluriballOpzione" style="
+    width: 260px;
+    padding: 12px 14px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.08);
+  ">
+  <option value="">Seleziona un tipo di pluriball</option>
+  <option value="100mtx100cm (55gr)">55gr</option>
+  <option value="90mtx125cm (90gr)">90gr</option>
+  <option value="80125 (110gr)">110gr</option>
+</select>
 
-      if (!selezione) {
-        alert("Seleziona un'opzione di pluriball.");
-        return;
-      }
+<button onclick="inviaRichiesta()" style="padding: 14px 36px; font-size: 18px; font-weight: 600; background-color: rgb(37, 211, 102); color: white; border: medium; border-radius: 10px; box-shadow: rgba(37, 211, 102, 0.4) 0px 6px 12px; cursor: pointer; transition: background-color 0.3s, transform 0.2s; transform: scale(1);" onmouseover="this.style.backgroundColor='#1DA851'; this.style.transform='scale(1.02)'" onmouseout="this.style.backgroundColor='#25D366'; this.style.transform='scale(1)'">
+  Invia richiesta
+</button>
 
-      const testo = `Ciao! Vorrei ordinare il seguente tipo di pluriball:%0A- ${selezione}`;
-      const numero = "393447973229";
-      const url = `https://wa.me/${numero}?text=${encodeURIComponent(testo)}`;
-      window.open(url, "_blank");
+<script>
+  function inviaRichiesta() {
+    const selezione = document.getElementById("pluriballOpzione").value;
+
+    if (!selezione) {
+      alert("Seleziona un'opzione di pluriball.");
+      return;
     }
-  </script>
 
+    const testo = `Ciao! Vorrei ordinare il seguente tipo di pluriball:%0A- ${selezione}`;
+    const numero = "393447973229";
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(testo)}`;
+    window.open(url, "_blank");
+  }
+</script>
 
     
                 
