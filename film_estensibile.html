@@ -216,7 +216,24 @@
   </div>
 
   <select
-    id="filmOpzione"
+    id="filmColore"
+    style="
+      width: 240px;
+      padding: 10px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 16px;
+    "
+  >
+    <option value="">Seleziona un colore</option>
+    <option value="Bianco">Bianco</option>
+    <option value="Nero">Nero</option>
+    <option value="Trasparente">Trasparente</option>
+  </select>
+
+  <select
+    id="filmFormato"
     style="
       width: 240px;
       padding: 10px;
@@ -226,10 +243,9 @@
       margin-bottom: 24px;
     "
   >
-    <option value="">Seleziona un tipo</option>
-    <option value="Film estensibile bianco">Bianco</option>
-    <option value="Film estensibile nero">Nero</option>
-    <option value="Film estensibile trasparente">Trasparente</option>
+    <option value="">Seleziona un formato</option>
+    <option value="2.0 kg">6 pezzi 2.0 kg</option>
+    <option value="2.4 kg">6 pezzi 2.4 kg</option>
   </select>
 
   <button
@@ -252,14 +268,20 @@
 
   <script>
     function inviaRichiesta() {
-      const selezione = document.getElementById("filmOpzione").value;
+      const colore = document.getElementById("filmColore").value;
+      const formato = document.getElementById("filmFormato").value;
 
-      if (!selezione) {
-        alert("Seleziona un tipo di film estensibile.");
+      if (!colore) {
+        alert("Seleziona un colore di film estensibile.");
         return;
       }
 
-      const testo = `Ciao! Vorrei ordinare questo film estensibile:%0A- ${selezione}`;
+      if (!formato) {
+        alert("Seleziona un formato (2.0 kg o 2.4 kg).");
+        return;
+      }
+
+      const testo = `Ciao! Vorrei ordinare 6 pezzi di questo film estensibile:%0A- Colore: ${colore}%0A- Formato: ${formato}`;
       const numero = "393447973229";
       const url = `https://wa.me/${numero}?text=${encodeURIComponent(testo)}`;
       window.open(url, "_blank");
