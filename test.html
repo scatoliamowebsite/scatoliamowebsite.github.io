@@ -139,109 +139,107 @@
 
     
 
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <title>Richiedi scatola da imballaggio</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-      font-family: Arial, sans-serif;
-    }
+    <div class="content-block home-page-list">
+                                             <div class="container product-section">
+    <div class="content-keen">
+<div style="display:flex;justify-content:center;align-items:center;min-height:100vh;">
+  <div style="max-width:400px;width:100%;background:#fff;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.12);padding:24px 24px 32px;display:flex;flex-direction:column;gap:24px;">
+<div
+  style="
+    font-family: 'Segoe UI', sans-serif;
+    background: #fff;
+    margin: 0;
+    padding: 55px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+  "
+>
+  <h2 style="margin-bottom: 24px; color: #222;">Richiedi Scotch</h2>
 
-    .container-centrata {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
+  <img
+    src="image_sc/scotch.png"
+    alt="Scotch"
+    style="width: 220px; height: auto; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); margin-bottom: 24px;"
+  />
 
-    .box-form {
-      max-width: 400px;
-      width: 100%;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-      padding: 24px 24px 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      text-align: center;
-    }
+  <select
+    id="scotchColore"
+    style="
+      width: 260px;
+      padding: 10px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 16px;
+    "
+  >
+    <option value="">Seleziona un colore</option>
+    <option value="Bianco">Bianco</option>
+    <option value="Trasparente">Trasparente</option>
+    <option value="Marrone">Marrone</option>
+  </select>
 
-    .box-form input {
-      margin: 8px 0;
-      padding: 12px 14px;
-      width: 100%;
-      font-size: 16px;
-      border: 1.8px solid #ddd;
-      border-radius: 8px;
-      box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-      transition: border-color 0.3s;
-    }
+  <select
+    id="scotchFormato"
+    style="
+      width: 260px;
+      padding: 10px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 24px;
+    "
+  >
+    <option value="">Seleziona un formato</option>
+    <option value="36 pezzi 50mm x 66mt">36 pezzi 50mm x 66mt</option>
+    <option value="36 pezzi 50mm x 132mt">36 pezzi 50mm x 132mt</option>
+  </select>
 
-    .box-form input:focus {
-      border-color: #25D366;
-      outline: none;
-    }
-
-    .box-form button {
-      padding: 14px 36px;
-      font-size: 18px;
-      font-weight: 600;
+  <button
+    onclick="inviaRichiestaScotch()"
+    style="
+      padding: 10px 24px;
+      font-size: 15px;
       background-color: #25D366;
       color: white;
       border: none;
-      border-radius: 10px;
-      box-shadow: 0 6px 12px rgba(37, 211, 102, 0.5);
+      border-radius: 6px;
       cursor: pointer;
-      transition: background-color 0.3s;
+      transition: opacity 0.2s ease;
+    "
+    onmouseover="this.style.opacity='0.85'"
+    onmouseout="this.style.opacity='1'"
+  >
+    Invia via WhatsApp
+  </button>
+
+  <script>
+    function inviaRichiestaScotch() {
+      const colore = document.getElementById("scotchColore").value;
+      const formato = document.getElementById("scotchFormato").value;
+
+      if (!colore) {
+        alert("Seleziona un colore dello scotch.");
+        return;
+      }
+
+      if (!formato) {
+        alert("Seleziona un formato.");
+        return;
+      }
+
+      const testo = `Ciao! Vorrei ordinare questo scotch: Colore: ${colore}, Formato: ${formato}`;
+      const numero = "393447973229";
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(testo)}`;
+      window.open(url, "_blank");
     }
-
-    .box-form button:hover {
-      background-color: #1DA851;
-    }
-  </style>
-</head>
-<body>
-
-<div class="container-centrata">
-  <div class="box-form">
-    <h2>Richiedi scatola da imballaggio</h2>
-    <div align="center">
-    <img src="image_sc/avana.png" alt="Scatola da imballaggio" style="width: 280px; height: auto; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-    </div>
-    <input type="number" id="larghezza" placeholder="Larghezza (cm)" required>
-    <input type="number" id="altezza" placeholder="Altezza (cm)" required>
-    <input type="number" id="lunghezza" placeholder="Lunghezza (cm)" required>
-
-    <button onclick="inviaRichiesta()">Invia richiesta</button>
-  </div>
+  </script>
 </div>
 
-<script>
-  function inviaRichiesta() {
-    const larghezza = document.getElementById("larghezza").value.trim();
-    const altezza = document.getElementById("altezza").value.trim();
-    const lunghezza = document.getElementById("lunghezza").value.trim();
-
-    if (!larghezza || !altezza || !lunghezza) {
-      alert("Per favore, inserisci tutte le dimensioni!");
-      return;
-    }
-
-    const testo = `Ciao! Vorrei una scatola da imballaggio AVANA con queste dimensioni:%0A- Larghezza: ${larghezza} cm%0A- Altezza: ${altezza} cm%0A- Lunghezza: ${lunghezza} cm`;
-    const numero = "393447973229"; // Cambia se vuoi
-    const url = `https://wa.me/${numero}?text=${testo}`;
-    window.open(url, "_blank");
-  }
-</script>
-
-</body>
-</html>
 
 
         
